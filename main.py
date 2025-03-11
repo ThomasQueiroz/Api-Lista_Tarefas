@@ -51,7 +51,6 @@ def create_task():
 @app.route('/tasks/<int:task_id>', methods=['PUT'])
 def update_task(task_id):
     task_search = None
-    #Buscando a tarefa que será alterada
     for tarefa in tarefas:
         if tarefa.get('id') == task_id:
             task_search = tarefa
@@ -65,7 +64,6 @@ def update_task(task_id):
     return task_search
 @app.route('/tasks/d<int:task_id>', methods=['DELETE'])
 def delete_task(task_id):
-    # Buscando a tarefa que será deletada
     for tarefa in tarefas:
         if tarefa.get('id') == task_id:
             tarefas.remove(tarefa)
